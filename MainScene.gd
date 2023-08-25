@@ -17,7 +17,9 @@ func _process(delta):
 	
 	var turnAngle	= lerp(0,errorAngle,0.05)
 	
-	var linearSpeed	= lerp(0,directionToTarget.clamped(30).length(),0.05)
+	var linearSpeed	
+	
+	linearSpeed = lerp(0,directionToTarget.clamped(60).length(),0.02)*2
 	
 	velocity = velocity.rotated(turnAngle)
 	
@@ -25,7 +27,9 @@ func _process(delta):
 	
 	position += velocity*linearSpeed
 	
-	update_label_info("\n"+ " angle speed: " + str(turnAngle) + "\n"+ " linear speed: " + str(linearSpeed))
+	update_label_info("\n"+ " angle speed: " + str(turnAngle) + "\n"+ 
+	" linear speed: " + str(linearSpeed) + "\n"+
+	" distance: " + str(directionToTarget.length()))
 	
 	pass
 
