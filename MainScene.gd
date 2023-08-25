@@ -33,13 +33,10 @@ func _process(delta):
 	
 	pass
 
-
-
 func update_label_info(info : String):
 	var labelNode = $"../Label"
 	labelNode.text = info
 	pass	
-
 
 func _draw():	
 	var triangle_points1 = [Vector2(26, 0), Vector2(-13,-15), Vector2(-13,15)]
@@ -49,8 +46,6 @@ func _draw():
 	var triangle_points = [Vector2(20, 0), Vector2(-10,-10), Vector2(-10,10)]
 	draw_colored_polygon(triangle_points, Color(1, 0, 0))
 
-
-	#draw_circle(Vector2(0,0),10,Color.red)
 
 func _input(event):
 	#if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
